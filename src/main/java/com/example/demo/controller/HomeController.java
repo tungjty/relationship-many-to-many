@@ -39,10 +39,10 @@ public class HomeController {
         return "COURSE WITH STUDENT(S) WAS REMOVED SUCCESSFULLY";
     }
 
-    // DELETE STUDENT -> DELETE COURSE ???
+    // DELETE STUDENT -> DO NOT DELETE COURSE
     @DeleteMapping(path = "student/delete/{id}")
     public String deleteStudentById(@PathVariable("id") Long id) {
         studentService.removeStudentById(id);
-        return "STUDENT WAS REMOVED SUCCESSFULLY";
+        return "STUDENT WAS REMOVED ONLY";
     }
 }
