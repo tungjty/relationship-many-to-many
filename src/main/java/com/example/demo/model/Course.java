@@ -31,7 +31,8 @@ public class Course {
 
     // TODO : WE CAN ALSO MAKE MANY-TO-MANY RELATIONSHIP IN STUDENT ENTITY
     @ManyToMany(
-            // CascadeType.REMOVE : DELETE COURSE-> DELETE IN MAPPING TABLE, DO NOT DELETE STUDENT
+            // CascadeType.REMOVE : DELETE COURSE-> DELETE ALL IN MAPPING TABLE & STUDENT
+            // IF YOU NEED TO DELETE COURSE ONLY -> REMOVE CascadeType.REMOVE
             cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
             fetch = FetchType.LAZY // DEFAULT 'LAZY'
     )
