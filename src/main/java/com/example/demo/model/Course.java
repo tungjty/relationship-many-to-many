@@ -58,10 +58,4 @@ public class Course {
         this.courseName = courseName;
         this.students = students;
     }
-
-    //    public void addStudent(Student student) {
-//        if(students == null)
-//            students = new ArrayList<>();
-//        students.add(student);
-//    }
 }
