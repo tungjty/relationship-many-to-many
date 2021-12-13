@@ -24,19 +24,19 @@ public class RelationshipManyToManyApplication {
 		return args -> {
 
 			// SAVE COURSE -> SAVE STUDENT
-			Student maria = new Student("Maria Carey");
-			Student tommy = new Student("Tommy Le");
+			Student maria = new Student("1- Maria Carey");
+			Student tommy = new Student("2- Tommy Le");
 			List<Student> students_us = List.of(maria, tommy);
 
-			Course javaCourse = new Course("Java For Dev", students_us);
+			Course javaCourse = new Course("01. Java For Dev", students_us);
 
 			courseRepository.save(javaCourse);
 
 			// SAVE STUDENT -> SAVE COURSE
-			Course swiftCourse = new Course("Swift for Beginner");
-			Course pythonCourse = new Course("Jump To Python");
+			Course swiftCourse = new Course("02. Swift for Beginner");
+			Course pythonCourse = new Course("03. Jump To Python");
 			List<Course> listCourse = List.of(swiftCourse, pythonCourse);
-			Student tunghoang = new Student("Tung Hoang", listCourse);
+			Student tunghoang = new Student("3- Tung Hoang", listCourse);
 
 			studentRepository.save(tunghoang);
 		};

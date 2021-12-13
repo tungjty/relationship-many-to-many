@@ -5,7 +5,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -31,7 +30,7 @@ public class Course {
 
     // TODO : WE CAN ALSO MAKE MANY-TO-MANY RELATIONSHIP IN STUDENT ENTITY
     @ManyToMany(
-            // CascadeType.REMOVE : DELETE COURSE-> DELETE ALL IN MAPPING TABLE & STUDENT
+            // CascadeType.REMOVE : DELETE COURSE-> DELETE ALL IN MAPPING & STUDENT TABLES
             // IF YOU NEED TO DELETE COURSE ONLY -> REMOVE CascadeType.REMOVE
             cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
             fetch = FetchType.LAZY // DEFAULT 'LAZY'

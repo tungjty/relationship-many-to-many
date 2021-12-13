@@ -1,7 +1,6 @@
 package com.example.demo.model;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
@@ -34,6 +33,7 @@ public class Student {
             cascade = {CascadeType.PERSIST},
             fetch = FetchType.LAZY // DEFAULT 'EAGER'
     )
+    // TODO : IF WE DONT DEFINE @JoinTable HERE -> HIBERNATE WILL CREATE tbl_student_courses TABLE
     @JoinTable(
             name = "student_course_mapping", // NAME OF MAPPING TABLE
             joinColumns = @JoinColumn(
@@ -66,19 +66,8 @@ public class Student {
         this.studentId = studentId;
     }
 
-    public String getStudentName() {
-        return studentName;
-    }
-
-    public void setStudentName(String studentName) {
-        this.studentName = studentName;
-    }
-
 //    public List<Course> getCourses() {
 //        return courses;
 //    }
 
-    public void setCourses(List<Course> courses) {
-        this.courses = courses;
-    }
 }
